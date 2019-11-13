@@ -47,6 +47,15 @@ print(ag_atoms.cell)
 Note that this has constructed a *primitive* cell of Ag rather than the cubic cell with 4.09Å sides.
 
 
+> It's not obvious what the lattice generating functions will be named.
+> We could look in the documentation or the source code, but from an iPython terminal
+> or Jupyter notebook there is another convenient option: tab-completion.
+> Type `ase.lattice.` and hit the tab key a few times to open a list of available options.
+> These are all the classes, functions and properties available in the `ase.lattice` module.
+
+> *Find the tetragonal lattice and build a tetragonal unit cell. Have a look in the viewer to see if it makes sense.*
+
+
 ## Space groups
 
 
@@ -116,7 +125,7 @@ but it's not unusual to find structures specified this way in research papers or
 
 
 ### Getting the symmetry operations
-*How did ASE do that?*
+How did ASE do that?
 
 ASE has a data structure for spacegroups that includes information about the symmetry operations, loaded from a data table.
 
@@ -140,3 +149,19 @@ for i, (rot, trans) in enumerate(spg.get_symop()):
 ```
 
 Hopefully these operations look familiar from the CIF file!
+
+> *Have a look at the symmetry operations from some other spacegroups. Can you identify rotation, reflection and glide operations?*
+
+
+To generate a structure with these operations, ASE uses the symops in a method `Spacegroup.equivalent_sites`. This takes positions in fractional coordinates and applies the symmetry operations to derive a set of images. If we provide just the Si atom from the .cif file, we get our original site back, with two other images - this is consistent with the cell of three formula units.
+
+```python
+spg.equivalent_sites([0.4673, 0, 0.3333])
+```
+
+> *What does the [0, 0, 0] mean? This is not part of the equivalent_sites array. Have a look at the docstring...*
+>
+> To examine detailed help from a regular python terminal you could use `help(ase.spacegroup.Spacegroup)`.
+> To inspect the manually-written docstring part directly you could print `ase.spacegroup.Spacegroup.__doc__`.
+> From an iPython terminal or Jupyter notebook the most convenient option is the special syntax `ase.spacegroup.Spacegroup?`.
+> Most functions in ASE should have docstrings, so adding a `?` to a half-written line of code can be very helpful in the heat of the moment.
