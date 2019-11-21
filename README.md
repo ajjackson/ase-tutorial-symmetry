@@ -5,6 +5,7 @@ _A self-guided tutorial on crystal symmetry in ASE_
 [https://ajjackson.github.io/ase-tutorial-symmetry](https://ajjackson.github.io/ase-tutorial-symmetry)
 
 - [Jupyter Notebook](https://github.com/ajjackson/ase-tutorial-symmetry/blob/master/ase-symmetry.ipynb)
+- [File download](https://raw.githubusercontent.com/ajjackson/ase-tutorial-symmetry/master/ase-symmetry.ipynb)
 - [Markdown version](https://github.com/ajjackson/ase-tutorial-symmetry/blob/master/ase-symmetry.md)
 
 Files used in tutorial:
