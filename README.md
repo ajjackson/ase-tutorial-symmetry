@@ -1,6 +1,7 @@
 # Crystal symmetry and spglib
 
 _A self-guided tutorial on crystal symmetry in ASE_
+
 [https://ajjackson.github.io/ase-tutorial-symmetry](https://ajjackson.github.io/ase-tutorial-symmetry)
 
 - [Jupyter Notebook](https://github.com/ajjackson/ase-tutorial-symmetry/blob/master/ase-symmetry.ipynb)
